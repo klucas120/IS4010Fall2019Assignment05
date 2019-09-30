@@ -1,10 +1,24 @@
 /*
- * IS4010 Fal 2019
+* Kirsten Lucas
+* lucaskt@mail.uc.edu
+* Assignment 05
+* Due Date: 3 Oct 2019
+* Description: Football Fun
+* Citations: 
+* Course: IS4010
+ */
+
+
+/* Original documentation from Git: 
+ * IS4010 Fall 2019
  * Assignment 05
  * Bill Nicholson
  * nicholdw@ucmail.uc.edu
  */
+
 package footballFun;
+
+import java.util.Scanner; // Imports scanner
 
 public class FootballFun {
 
@@ -18,6 +32,10 @@ public class FootballFun {
 		if (translateScore(-1).equals("") == true) { correctCount++;}
 		if (translateScore(1).equals("invalid") == true) { correctCount++;}
 		if (translateScore(10).equals("you must be playing Quidditch ") == true) { correctCount++;}
+		
+		Scanner input = new Scanner(System.in); // Creates a scanner to input score
+			System.out.print("Enter football score: "); // Prompts user to enter score
+			double score = input.nextDouble(); // Declares a double to hold the score
 		
 		if (correctCount == 8) {
 			System.out.println("All tests passed");
