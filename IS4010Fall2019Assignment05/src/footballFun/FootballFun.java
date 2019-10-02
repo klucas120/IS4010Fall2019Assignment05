@@ -18,13 +18,8 @@
 
 package footballFun;
 
-import java.util.Scanner; // Imports scanner
-
 public class FootballFun {
 	
-
-	// public static double translateScore(double score)
-
 	
 	public static void main(String[] args) {
 		int correctCount = 0;
@@ -37,11 +32,6 @@ public class FootballFun {
 		if (translateScore(1).equals("invalid") == true) { correctCount++;}
 		if (translateScore(10).equals("you must be playing Quidditch ") == true) { correctCount++;}
 		
-
-		Scanner input = new Scanner(System.in); // Creates a scanner to input score
-		System.out.print("Enter football score: "); // Prompts user to enter score
-		double score = input.nextDouble(); // Declares a double to hold the score	
-		
 		
 		if (correctCount == 8) {
 			System.out.println("All tests passed");
@@ -50,8 +40,32 @@ public class FootballFun {
 		}
 	}
 	
-
-	public static String translateScore (int score) {
+	public static String translateScore (int score) { // Method to translate the score
+		if (score == 2) { 							  // Test if score is 2
+			return "safety";
+		}
+		else if (score == 3) {						  // Test if score is 3
+			return "field goal";
+		}
+		else if (score == 6) {						  // Test if score is 6
+			return "touchdown";
+		}
+		else if (score == 7) {						  // Test if score is 7
+			return "touchdown and extra point";
+		}
+		else if (score == 8) {						  // Test if score is 8
+			return "touchdown and 2-point conversion";
+		}
+		else if (score == 10) {						  // Test if score is 10
+			return "you must be playing Quidditch ";
+		}
+		else if (score >= 0) {						  // Test for invalid scores (negative number)
+			return "invalid";
+		}
+		else if (score < 0) {						  // Test for invalid scores
+			return "";
+		}
+		
 		return "";
 	}
 }
